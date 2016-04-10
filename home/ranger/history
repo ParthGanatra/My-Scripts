@@ -1,0 +1,50 @@
+shell mkdir pendrive
+shell sudo mount /dev/
+shell sudo mount /dev/sda5 /media/parth/kali/
+search arch
+shell sudo umount kali
+shell sudo mount /dev/sda5/ kali
+wq
+shell sudo vim grub.cfg.new
+search to watch
+search robot
+open_with firefox
+search os
+shell sudo pacman -U bluez-libs-5.38-1-x86_64.pkg.tar.xz
+search .mp3
+search user
+open_with cvlc
+open_with nvlc
+mkdir "Lecture Slides"
+rename Lecture Slides
+shell unrar e TWD.614.720p.x264-tuserie.com.rar 
+shell unrar e TWD.615.1080p.web.tuserie.com.rar
+open_with subl
+w
+shell unzip documents-export-2016-03-30.zip
+mkdir 
+mkdir arrays and strings
+shell vim "Chandu and Consecutive Letters"
+shell vim "q2.c"
+search fips
+search .bib
+shell unrar e pradeet.rar
+search .pdf
+open_with unzip
+rename scribe.zip
+rename scribe_sha3.zip
+rename scribe_sha3.pdf
+shell ranger-cd
+search note
+open_with unrar e
+search ssh
+shellq
+open_with vlc
+
+shell 
+deleteD
+open_with 
+search trumbo
+open_with 1
+mkdir Games
+delete
