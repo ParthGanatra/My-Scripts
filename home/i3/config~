@@ -198,6 +198,7 @@ exec --no-startup-id "twmnd"
 
 # automount pendrives
 exec --no-startup-id "devmon no-gui"
+exec_always cd ~/.conky/ && ruby starter.rb
 
 #Extra Keyboard keys
 

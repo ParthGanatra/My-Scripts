@@ -10,18 +10,27 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'scrooloose/nerdcommenter'
 
-filetype plugin indent on
+Plugin 'sjl/badwolf'
 
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2015 Mar 24
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+Plugin 'majutsushi/tagbar'
+
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'xolox/vim-easytags'
+
+Plugin 'xolox/vim-misc'
+
+Plugin 'godlygeek/tabular'
+
+Plugin 'plasticboy/vim-markdown'
+
+Plugin 'mhinz/vim-startify'
+
+filetype plugin indent on
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -49,8 +58,6 @@ set incsearch		" do incremental searching
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -116,4 +123,81 @@ if has('langmap') && exists('+langnoremap')
 endif
 
 set number
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+inoremap jk <ESC>
+let mapleader = "\<Space>"
+set encoding=utf-8
+vnoremap . :norm.<CR>
+set formatoptions-=cro
+syntax enable
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+iabbrev @@ ganatraparth1995@gmail.com
+iabbrev @@@ 201301439@daiict.ac.in
+iabbrev ssig -- <cr>Parth Ganatra<cr>201301439
+
+nnoremap <leader>s :set spell!<CR>
+nnoremap <leader>c 1z=
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <leader>< viw<esc>a<<esc>hbi<<esc>lel
+nnoremap <leader>( viw<esc>a(<esc>hbi(<esc>lel
+nnoremap <leader>{ viw<esc>a{<esc>hbi{<esc>lel
+nnoremap <leader>[ viw<esc>a[<esc>hbi[<esc>lel
+nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>f :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+nnoremap H ^
+nnoremap L $
+
+"inoremap <esc> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"noremap <up> <nop>
+"noremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+colorscheme badwolf
+
+autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
+autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+
+"add endl shortcut
+
+function! RangeChooser()
+    let temp = tempname()
+    " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
+    " with ranger 1.4.2 through 1.5.0 instead.
+    "exec 'silent !ranger --choosefile=' . shellescape(temp)
+    if has("gui_running")
+        exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
+    else
+        exec 'silent !ranger --choosefiles=' . shellescape(temp)
+    endif
+    if !filereadable(temp)
+        redraw!
+        " Nothing to read.
+        return
+    endif
+    let names = readfile(temp)
+    if empty(names)
+        redraw!
+        " Nothing to open.
+        return
+    endif
+    " Edit the first item.
+    exec 'edit ' . fnameescape(names[0])
+    " Add any remaning items to the arg list/buffer list.
+    for name in names[1:]
+        exec 'argadd ' . fnameescape(name)
+    endfor
+    redraw!
+endfunction
+command! -bar RangerChooser call RangeChooser()
+nnoremap <leader>r :<C-U>RangerChooser<CR>

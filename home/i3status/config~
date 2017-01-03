@@ -73,11 +73,11 @@ cpu_temperature 0 {
 }
 
 disk "/" {
-        format = "R: %free"
+        format = "%free"
 }
 
 disk "/home" {
-        format = "H: %free"
+        format = "%free"
 }
 
 volume master {

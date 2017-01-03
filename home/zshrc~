@@ -88,9 +88,3 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-alias t='python ~/scripts/t.py --task-dir ~/tasks --list tasks'
-alias he='sudo systemctl start create_ap@ethernet.service'
-alias hw='sudo systemctl start create_ap@wifi.service'
-alias bt='wget http://cachefly.cachefly.net/400mb.test > /dev/null'
-. /home/parth/scripts/z.sh
-unsetopt share_history

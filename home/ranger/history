@@ -1,50 +1,50 @@
-shell mkdir pendrive
-shell sudo mount /dev/
-shell sudo mount /dev/sda5 /media/parth/kali/
-search arch
-shell sudo umount kali
-shell sudo mount /dev/sda5/ kali
-wq
-shell sudo vim grub.cfg.new
-search to watch
-search robot
-open_with firefox
-search os
-shell sudo pacman -U bluez-libs-5.38-1-x86_64.pkg.tar.xz
-search .mp3
-search user
-open_with cvlc
-open_with nvlc
-mkdir "Lecture Slides"
-rename Lecture Slides
-shell unrar e TWD.614.720p.x264-tuserie.com.rar 
-shell unrar e TWD.615.1080p.web.tuserie.com.rar
-open_with subl
-w
-shell unzip documents-export-2016-03-30.zip
-mkdir 
-mkdir arrays and strings
-shell vim "Chandu and Consecutive Letters"
-shell vim "q2.c"
-search fips
-search .bib
-shell unrar e pradeet.rar
-search .pdf
-open_with unzip
-rename scribe.zip
-rename scribe_sha3.zip
-rename scribe_sha3.pdf
-shell ranger-cd
-search note
-open_with unrar e
-search ssh
-shellq
+shell mkdir move
+shell mkdir stickhero
+shell mkdir find_a_way
+rename solver_naive.py
+rename solver.py
+mark *.py
+mark "*.py"
+mark des
+mark main
+mark 
+mark py
+mark
+shell mkdir treepie
+search qsml
+shell mkdir Softwares
+rename Westworld
+rename Softwares
+find office
+rename The.Blacklist.S04E08.mp4
+shell S
+find m
+mark .mat
+shell temp
+shell mkdir tmp
+shell mkdir code
+mark ~
+mark npy
+shell mkdir project
+unmark
+compress code.zip
+shell 
+rename appmanifest_570.acf
+find sta
+find f
+find coh
+open_with vim
+search 
+find 86
+find not
+t
 open_with vlc
 
-shell 
-deleteD
+open_with 0
+open_with tranmission-gtk
 open_with 
-search trumbo
+open_with 2
+shell mkdir movies
 open_with 1
-mkdir Games
 delete
+search atlas
